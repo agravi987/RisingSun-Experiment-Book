@@ -1,0 +1,32 @@
+/* styles/globals.css */
+body {
+  background: linear-gradient(to bottom, #0a1a3f, #001c3c);
+  color: #e2e8f0; /* Light text */
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #3b82f6; /* Blue links */
+  text-decoration: none;
+}
+
+/* Loading.css */
+.loader {
+  border: 6px solid #1e3a5f;
+  border-top: 6px solid #9fc3e9;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

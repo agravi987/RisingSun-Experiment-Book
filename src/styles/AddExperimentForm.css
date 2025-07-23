@@ -1,0 +1,47 @@
+.experiment-form {
+  background-color: #0d1b2a;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.experiment-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.experiment-form input,
+.experiment-form textarea,
+.experiment-form button {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  background-color: #1b263b;
+  color: #ffffff;
+}
+
+.experiment-form button {
+  margin-top: 1rem;
+  background-color: #415a77;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.experiment-form button:hover {
+  background-color: #778da9;
+}
+
+.back-button {
+  color: #64dfdf;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}

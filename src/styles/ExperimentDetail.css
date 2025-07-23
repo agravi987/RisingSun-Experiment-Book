@@ -1,0 +1,69 @@
+/* styles/ExperimentDetail.css */
+
+.experiment-detail-container {
+  background-color: #0d1b2a; /* dark navy */
+  color: #e0e1dd; /* light gray text */
+  padding: 2rem;
+  border-radius: 10px;
+  font-family: "Segoe UI", sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.back-button {
+  color: #64dfdf;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #80ffdb;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #f9f9f9;
+  margin-bottom: 1rem;
+}
+
+.detail-date,
+.detail-section p,
+.detail-section ul,
+.detail-section li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.detail-section {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #1b263b;
+  border-radius: 8px;
+}
+
+.detail-section h3 {
+  margin-bottom: 0.5rem;
+  color: #adb5bd;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #415a77;
+  padding-bottom: 0.3rem;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background-color: #415a77;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
