@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import axios from "axios";
-import ExperimentDetail from "@/components/ExperimentDetail";
+import EditExperimentForm from "@/components/EditExperimentForm";
 import Loader from "@/components/Loader";
 
-const ExperimentPage = () => {
+const EditExperimentPage = () => {
   const { id } = useParams();
   const [experiment, setExperiment] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,10 +15,9 @@ const ExperimentPage = () => {
     const fetchExperiment = async () => {
       try {
         const { data } = await axios.get(`/api/experiments/${id}`);
-        console.log("Fetched experiment data:", data);
         setExperiment(data.data);
       } catch (error) {
-        console.error("Failed to fetch experiment:", error);
+        console.error("Error fetching experiment:", error);
       } finally {
         setLoading(false);
       }
@@ -27,10 +26,10 @@ const ExperimentPage = () => {
     if (id) fetchExperiment();
   }, [id]);
 
-  if (loading) return <Loader content="Loading experiment details..." />;
+  if (loading) return <Loader content="Making Ready to Edit..." />;
   if (!experiment) return <p>Experiment not found.</p>;
 
-  return <ExperimentDetail experiment={experiment} />;
+  return <EditExperimentForm experiment={experiment} />;
 };
 
-export default ExperimentPage;
+export default EditExperimentPage;

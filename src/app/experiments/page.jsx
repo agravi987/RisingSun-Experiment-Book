@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ExperimentList from "@/components/ExperimentList";
+import Loader from "@/components/Loader";
 
 const AllExperimentsPage = () => {
   const [experiments, setExperiments] = useState([]);
@@ -30,21 +31,7 @@ const AllExperimentsPage = () => {
       </h1>
       {loading ? (
         // Loader component or a simple loading message
-        <div
-          style={{
-            backgroundColor: "#0a1725",
-            minHeight: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "#9fc3e9",
-            fontSize: "1.5rem",
-            flexDirection: "column",
-          }}
-        >
-          <div className="loader"></div>
-          <p style={{ marginTop: "20px" }}>Loading Experiments...</p>
-        </div>
+        <Loader content="Loading experiments" />
       ) : (
         <ExperimentList experiments={experiments} />
       )}

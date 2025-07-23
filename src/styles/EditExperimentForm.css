@@ -1,0 +1,74 @@
+.edit-form {
+  background-color: #0d1b2a;
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.edit-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #64dfdf;
+  font-size: 1.8rem;
+}
+
+.edit-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #e0e1dd;
+}
+
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  background-color: #1b263b;
+  color: #ffffff;
+  resize: vertical;
+}
+
+.edit-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+
+.edit-form button {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 1.5rem;
+  background-color: #415a77;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-form button:hover {
+  background-color: #778da9;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #64dfdf;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+
+.back-button:hover {
+  color: #90e0ef;
+}
