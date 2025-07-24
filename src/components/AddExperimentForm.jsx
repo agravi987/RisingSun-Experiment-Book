@@ -114,6 +114,7 @@ export default function AddExperimentForm() {
         name="conductedBy"
         value={form.conductedBy}
         onChange={handleChange}
+        defaultValue={session.user.name}
       />
 
       <label>Tags</label>
