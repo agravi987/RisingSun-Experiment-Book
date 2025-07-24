@@ -110,12 +110,7 @@ export default function AddExperimentForm() {
       </button>
 
       <label>Conducted By</label>
-      <input
-        name="conductedBy"
-        value={form.conductedBy}
-        onChange={handleChange}
-        defaultValue={session.user.name}
-      />
+      <input name="conductedBy" value={session.user.name} readOnly />
 
       <label>Tags</label>
       {form.tags.map((tag, i) => (
