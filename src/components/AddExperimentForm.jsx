@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import "@/styles/AddExperimentForm.css";
+import { useEffect } from "react";
 
 export default function AddExperimentForm() {
   const { data: session, status } = useSession();
@@ -21,6 +22,12 @@ export default function AddExperimentForm() {
     location: "",
     reviewed: false,
   });
+
+  useEffect(() => {
+    if (session?.user?.name) {
+      setForm((prev) => ({ ...prev, conductedBy: session.user.name }));
+    }
+  }, [session]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -110,7 +117,7 @@ export default function AddExperimentForm() {
       </button>
 
       <label>Conducted By</label>
-      <input name="conductedBy" value={session.user.name} readOnly />
+      <input name="conductedBy" value={form.conductedBy} readOnly />
 
       <label>Tags</label>
       {form.tags.map((tag, i) => (
