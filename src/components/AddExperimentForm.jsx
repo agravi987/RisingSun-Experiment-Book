@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import axios from "axios";
-import "@/styles/AddExperimentForm.css";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import { useSession } from "next-auth/react";
+import "@/styles/AddExperimentForm.css";
 
 export default function AddExperimentForm() {
+  const { data: session, status } = useSession();
   const router = useRouter();
+
   const [form, setForm] = useState({
     title: "",
     date: "",
@@ -21,12 +24,7 @@ export default function AddExperimentForm() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-
-    if (type === "checkbox") {
-      setForm({ ...form, [name]: checked });
-    } else {
-      setForm({ ...form, [name]: value });
-    }
+    setForm({ ...form, [name]: type === "checkbox" ? checked : value });
   };
 
   const handleArrayChange = (index, name, value) => {
@@ -41,21 +39,35 @@ export default function AddExperimentForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await axios.post("/api/experiments", form);
+      await axios.post("/api/experiments", form);
       alert("Experiment added successfully!");
+      router.push("/"); // Navigate after success
     } catch (err) {
       console.error(err);
       alert("Failed to add experiment.");
     }
   };
 
+  if (status === "loading")
+    return <div className="loading-msg">Loading...</div>;
+
+  if (!session) {
+    return (
+      <div className="not-logged-in">
+        <h2>You're not logged in</h2>
+        <p>Please login first to add experiments.</p>
+        <button onClick={() => router.push("/login")}>Login</button>
+      </div>
+    );
+  }
+
   return (
     <form className="experiment-form" onSubmit={handleSubmit}>
       <div className="back-button" onClick={() => router.back()}>
         ← Back
       </div>
+
       <label>Title*</label>
       <input name="title" value={form.title} onChange={handleChange} required />
 

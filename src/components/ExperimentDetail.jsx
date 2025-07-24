@@ -4,9 +4,11 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import "./../styles/ExperimentDetail.css";
+import { useSession } from "next-auth/react";
 
 const ExperimentDetail = ({ experiment }) => {
   const router = useRouter();
+  const { data: session } = useSession();
 
   return (
     <div className="experiment-detail-container">
@@ -59,37 +61,41 @@ const ExperimentDetail = ({ experiment }) => {
         </div>
       </div>
 
-      <div className="button-container">
-        <button
-          className="edit-button"
-          onClick={() => router.push(`/edit-experiment/${experiment._id}`)}
-        >
-          ✏️ Edit Experiment
-        </button>
+      {session && session.user.name === experiment.conductedBy ? (
+        <div className="button-container">
+          <button
+            className="edit-button"
+            onClick={() => router.push(`/edit-experiment/${experiment._id}`)}
+          >
+            ✏️ Edit Experiment
+          </button>
 
-        <button
-          className="delete-button"
-          onClick={async () => {
-            const confirmDelete = confirm(
-              "Are you sure you want to delete this experiment?"
-            );
-            if (confirmDelete) {
-              try {
-                await fetch(`/api/experiments/${experiment._id}`, {
-                  method: "DELETE",
-                });
-                alert("Experiment deleted successfully!");
-                router.push("/experiments");
-              } catch (error) {
-                alert("Failed to delete experiment.");
-                console.error(error);
+          <button
+            className="delete-button"
+            onClick={async () => {
+              const confirmDelete = confirm(
+                "Are you sure you want to delete this experiment?"
+              );
+              if (confirmDelete) {
+                try {
+                  await fetch(`/api/experiments/${experiment._id}`, {
+                    method: "DELETE",
+                  });
+                  alert("Experiment deleted successfully!");
+                  router.push("/experiments");
+                } catch (error) {
+                  alert("Failed to delete experiment.");
+                  console.error(error);
+                }
               }
-            }
-          }}
-        >
-          🗑️ Delete Experiment
-        </button>
-      </div>
+            }}
+          >
+            🗑️ Delete Experiment
+          </button>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

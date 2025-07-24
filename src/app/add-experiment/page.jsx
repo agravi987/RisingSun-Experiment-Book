@@ -1,4 +1,5 @@
 // /app/add-experiment/page.jsx
+"use client";
 
 import AddExperimentForm from "@/components/AddExperimentForm";
 

@@ -17,8 +17,8 @@
 }
 
 .hero-image {
-  width: 100%;
-  border-radius: 1rem;
+  width: 12rem;
+  border-radius: 3rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -55,4 +55,15 @@
 
 .hero-btn:hover {
   background-color: #0055aa;
+}
+
+.hero-welcome {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 1rem;
+}
+
+.hero-btn.logout {
+  background-color: #c0392b;
+  color: white;
 }

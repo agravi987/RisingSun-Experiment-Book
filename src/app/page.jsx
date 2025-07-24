@@ -1,12 +1,10 @@
-import React from "react";
+// page.tsx
 import Hero from "@/components/Hero";
 
-function Home() {
+export default function HomePage() {
   return (
-    <div>
+    <main>
       <Hero />
-    </div>
+    </main>
   );
 }
-
-export default Home;

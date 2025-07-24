@@ -1,3 +1,4 @@
+"use client";
 // components/AddNewExperimentCard.jsx
 import React from "react";
 import { useRouter } from "next/navigation";

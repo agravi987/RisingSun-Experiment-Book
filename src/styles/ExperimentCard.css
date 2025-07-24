@@ -1,30 +1,59 @@
 .experiment-card {
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  color: #e2e8f0;
-  transition: transform 0.2s ease;
+  background-color: #1e2a38;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #2e3b4e;
 }
 
 .experiment-card:hover {
-  transform: scale(1.03);
-  background-color: #0f172a;
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(100, 150, 255, 0.2);
 }
 
-.experiment-card h3 {
-  margin: 0 0 10px;
-}
-
-.experiment-date {
-  font-size: 0.85rem;
-  color: #94a3b8;
+.card-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .experiment-summary {
-  margin-top: 10px;
+  margin: 0.5rem 0;
+  color: #c0c9d6;
+}
+
+.experiment-date {
+  font-size: 0.9rem;
+  color: #8899aa;
+}
+
+.experiment-conductedBy {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+  color: #a0b8d0;
+}
+
+.view-detail-container {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.view-detail-btn {
+  background-color: #3c6fff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.view-detail-btn:hover {
+  background-color: #2f5ce3;
 }
 
 /* styles/ExperimentCard.css */

@@ -30,3 +30,17 @@ a {
     transform: rotate(360deg);
   }
 }
+
+.my-experiments-container {
+  padding: 1rem;
+  background-color: #0c1b36;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.heading {
+  text-align: center;
+  margin: 20px 0;
+  color: #a8c0ff;
+  font-size: 2rem;
+}

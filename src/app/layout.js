@@ -1,4 +1,6 @@
 import "@/styles/globals.css";
+import Providers from "@/components/Providers";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Next.js",
@@ -8,7 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
